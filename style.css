@@ -1,0 +1,142 @@
+body {
+    /* Light Pink Background */
+    background-color: #fce4ec; /* Very light pink */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* For balloons */
+    text-align: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    z-index: 10;
+}
+
+/* --- Photo Gallery Style --- */
+#photo-gallery {
+    margin-bottom: 20px;
+}
+.photo {
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover;
+    border-radius: 50%; /* Round photo */
+    margin: 0 10px;
+    border: 3px solid #ff80ab;
+}
+
+/* --- Button Style --- */
+#blow-button {
+    background-color: #ff80ab; /* Nice pink color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#blow-button:hover {
+    background-color: #e06692;
+}
+
+/* --- Candles and Cake Style --- */
+.cake {
+    width: 150px;
+    height: 80px;
+    background-color: #a0522d; /* Cake color */
+    border-radius: 5px;
+    margin: 20px auto 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5px;
+}
+.candle {
+    width: 8px;
+    height: 30px;
+    background-color: #ffffff; /* Candle color */
+    border-radius: 2px 2px 0 0;
+    position: relative;
+}
+.flame {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 12px;
+    background-color: orange;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 2px yellow, 0 0 10px 4px rgba(255, 165, 0, 0.5);
+    transition: all 0.5s ease-out;
+}
+.flame.blown-out {
+    opacity: 0;
+    box-shadow: none;
+    height: 0;
+}
+
+/* --- Message Style --- */
+#birthday-message {
+    padding: 20px;
+    border: 2px dashed #ff80ab;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+#birthday-message h2 {
+    color: #ff80ab;
+    font-size: 1.8em;
+}
+#birthday-message p {
+    color: #444;
+    line-height: 1.6;
+}
+.hidden {
+    display: none;
+}
+
+/* --- Balloon Style and Animation --- */
+.balloon-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.balloon {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    background-color: #ffb6c1; /* Balloon color: light pink */
+    border-radius: 50%;
+    box-shadow: inset -5px -5px 5px rgba(0, 0, 0, 0.1);
+    animation: float 10s infinite linear;
+    opacity: 0.8;
+}
+
+/* Different balloon positions */
+.balloon:nth-child(1) { left: 10%; top: 100%; animation-duration: 12s; background-color: #ffd1dc; }
+.balloon:nth-child(2) { left: 40%; top: 100%; animation-duration: 9s; background-color: #ffb6c1; }
+.balloon:nth-child(3) { left: 65%; top: 100%; animation-duration: 15s; background-color: #f08080; }
+.balloon:nth-child(4) { left: 85%; top: 100%; animation-duration: 11s; background-color: #ffecd1; }
+.balloon:nth-child(5) { left: 25%; top: 100%; animation-duration: 13s; background-color: #ffb6c1; }
+
+/* Balloon Animation Keyframes */
+@keyframes float {
+    0% { transform: translateY(0); opacity: 0.8; }
+    50% { transform: translateY(-500px); opacity: 1; }
+    100% { transform: translateY(-1000px); opacity: 0; }
+}
